@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Finals-Javier_Mercado_Hibernate-Struts">
+        <wb-resource deploy-path="/" source-path="/web" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="Finals-Javier_Mercado_Hibernate-Struts"/>
+        <property name="java-output-path" value="/Finals-Javier_Mercado_Hibernate-Struts/build/classes"/>
+    </wb-module>
+</project-modules>
