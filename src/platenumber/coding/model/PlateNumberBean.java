@@ -1,12 +1,19 @@
 package platenumber.coding.model;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
+@Entity (name="bus_table")
 public class PlateNumberBean {
 	
-	private String busName;
+	@Id
 	private String plateNumber;
+	
+	
+	@Column(name="bus_name", length=50, nullable=false)
+	private String busName;
 	private String driverAssigned;
 	private String codingDay;
 	

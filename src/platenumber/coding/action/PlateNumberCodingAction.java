@@ -5,6 +5,11 @@ import platenumber.coding.model.PlateNumberBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 @SuppressWarnings("serial")
 public class PlateNumberCodingAction extends ActionSupport
 				implements ModelDriven<PlateNumberBean>{
@@ -25,7 +30,16 @@ public class PlateNumberCodingAction extends ActionSupport
 			//calling these two methods will populate the computed values  
 			plateCoding.determineCoding();
 			
+			SessionFactory sessionFactory = 
+					new Configuration().configure().buildSessionFactory();
+			
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.save(plateCoding); //same of SQL insert into statement 
+			session.getTransaction().commit();
+
 			return SUCCESS;
+		
 		}
 		
 		@Override
